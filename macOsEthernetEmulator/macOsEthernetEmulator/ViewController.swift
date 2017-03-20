@@ -33,6 +33,37 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     // Radio button group
     @IBAction func rb_inOrOut(_ sender: NSButton) {
+        
+        switch rb_outbound.state {
+        case NSOnState:
+            
+            line_1_name.isEnabled = false
+            line_2_name.isEnabled = false
+            line_3_name.isEnabled = false
+            line_4_name.isEnabled = false
+            
+            break
+        
+        case NSOffState:
+            
+            line_1_name.isEnabled = true
+            line_2_name.isEnabled = true
+            line_3_name.isEnabled = true
+            line_4_name.isEnabled = true
+            
+            break
+            
+        default:
+            
+            line_1_name.isEnabled = true
+            line_2_name.isEnabled = true
+            line_3_name.isEnabled = true
+            line_4_name.isEnabled = true
+            
+            break
+            
+        }
+        
     }
     
     @IBOutlet weak var rb_inbound: NSButton!
