@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04D6EB861E800653002316CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6EB851E800653002316CF /* AppDelegate.swift */; };
+		04D6EB881E800653002316CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6EB871E800653002316CF /* ViewController.swift */; };
+		04D6EB8A1E800653002316CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D6EB891E800653002316CF /* Assets.xcassets */; };
+		04D6EB8D1E800653002316CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D6EB8B1E800653002316CF /* Main.storyboard */; };
+		04D6EB981E800653002316CF /* macOsEthernetEmulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6EB971E800653002316CF /* macOsEthernetEmulatorTests.swift */; };
+		04D6EBA31E800653002316CF /* macOsEthernetEmulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6EBA21E800653002316CF /* macOsEthernetEmulatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04D6EB941E800653002316CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D6EB7A1E800652002316CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D6EB811E800652002316CF;
+			remoteInfo = macOsEthernetEmulator;
+		};
+		04D6EB9F1E800653002316CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D6EB7A1E800652002316CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D6EB811E800652002316CF;
+			remoteInfo = macOsEthernetEmulator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04D6EB821E800653002316CF /* macOsEthernetEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOsEthernetEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D6EB851E800653002316CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04D6EB871E800653002316CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04D6EB891E800653002316CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04D6EB8C1E800653002316CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04D6EB8E1E800653002316CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D6EB931E800653002316CF /* macOsEthernetEmulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macOsEthernetEmulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D6EB971E800653002316CF /* macOsEthernetEmulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOsEthernetEmulatorTests.swift; sourceTree = "<group>"; };
+		04D6EB991E800653002316CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D6EB9E1E800653002316CF /* macOsEthernetEmulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macOsEthernetEmulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D6EBA21E800653002316CF /* macOsEthernetEmulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOsEthernetEmulatorUITests.swift; sourceTree = "<group>"; };
+		04D6EBA41E800653002316CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04D6EB7F1E800652002316CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB901E800653002316CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB9B1E800653002316CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D6EB791E800652002316CF = {
+			isa = PBXGroup;
+			children = (
+				04D6EB841E800653002316CF /* macOsEthernetEmulator */,
+				04D6EB961E800653002316CF /* macOsEthernetEmulatorTests */,
+				04D6EBA11E800653002316CF /* macOsEthernetEmulatorUITests */,
+				04D6EB831E800653002316CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04D6EB831E800653002316CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04D6EB821E800653002316CF /* macOsEthernetEmulator.app */,
+				04D6EB931E800653002316CF /* macOsEthernetEmulatorTests.xctest */,
+				04D6EB9E1E800653002316CF /* macOsEthernetEmulatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04D6EB841E800653002316CF /* macOsEthernetEmulator */ = {
+			isa = PBXGroup;
+			children = (
+				04D6EB851E800653002316CF /* AppDelegate.swift */,
+				04D6EB871E800653002316CF /* ViewController.swift */,
+				04D6EB891E800653002316CF /* Assets.xcassets */,
+				04D6EB8B1E800653002316CF /* Main.storyboard */,
+				04D6EB8E1E800653002316CF /* Info.plist */,
+			);
+			path = macOsEthernetEmulator;
+			sourceTree = "<group>";
+		};
+		04D6EB961E800653002316CF /* macOsEthernetEmulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				04D6EB971E800653002316CF /* macOsEthernetEmulatorTests.swift */,
+				04D6EB991E800653002316CF /* Info.plist */,
+			);
+			path = macOsEthernetEmulatorTests;
+			sourceTree = "<group>";
+		};
+		04D6EBA11E800653002316CF /* macOsEthernetEmulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04D6EBA21E800653002316CF /* macOsEthernetEmulatorUITests.swift */,
+				04D6EBA41E800653002316CF /* Info.plist */,
+			);
+			path = macOsEthernetEmulatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04D6EB811E800652002316CF /* macOsEthernetEmulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D6EBA71E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulator" */;
+			buildPhases = (
+				04D6EB7E1E800652002316CF /* Sources */,
+				04D6EB7F1E800652002316CF /* Frameworks */,
+				04D6EB801E800652002316CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macOsEthernetEmulator;
+			productName = macOsEthernetEmulator;
+			productReference = 04D6EB821E800653002316CF /* macOsEthernetEmulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04D6EB921E800653002316CF /* macOsEthernetEmulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D6EBAA1E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulatorTests" */;
+			buildPhases = (
+				04D6EB8F1E800653002316CF /* Sources */,
+				04D6EB901E800653002316CF /* Frameworks */,
+				04D6EB911E800653002316CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D6EB951E800653002316CF /* PBXTargetDependency */,
+			);
+			name = macOsEthernetEmulatorTests;
+			productName = macOsEthernetEmulatorTests;
+			productReference = 04D6EB931E800653002316CF /* macOsEthernetEmulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04D6EB9D1E800653002316CF /* macOsEthernetEmulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D6EBAD1E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulatorUITests" */;
+			buildPhases = (
+				04D6EB9A1E800653002316CF /* Sources */,
+				04D6EB9B1E800653002316CF /* Frameworks */,
+				04D6EB9C1E800653002316CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D6EBA01E800653002316CF /* PBXTargetDependency */,
+			);
+			name = macOsEthernetEmulatorUITests;
+			productName = macOsEthernetEmulatorUITests;
+			productReference = 04D6EB9E1E800653002316CF /* macOsEthernetEmulatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04D6EB7A1E800652002316CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = CallerId.com;
+				TargetAttributes = {
+					04D6EB811E800652002316CF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UR2W66B7K8;
+						ProvisioningStyle = Automatic;
+					};
+					04D6EB921E800653002316CF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UR2W66B7K8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04D6EB811E800652002316CF;
+					};
+					04D6EB9D1E800653002316CF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = UR2W66B7K8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04D6EB811E800652002316CF;
+					};
+				};
+			};
+			buildConfigurationList = 04D6EB7D1E800652002316CF /* Build configuration list for PBXProject "macOsEthernetEmulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04D6EB791E800652002316CF;
+			productRefGroup = 04D6EB831E800653002316CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04D6EB811E800652002316CF /* macOsEthernetEmulator */,
+				04D6EB921E800653002316CF /* macOsEthernetEmulatorTests */,
+				04D6EB9D1E800653002316CF /* macOsEthernetEmulatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04D6EB801E800652002316CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D6EB8A1E800653002316CF /* Assets.xcassets in Resources */,
+				04D6EB8D1E800653002316CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB911E800653002316CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB9C1E800653002316CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04D6EB7E1E800652002316CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D6EB881E800653002316CF /* ViewController.swift in Sources */,
+				04D6EB861E800653002316CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB8F1E800653002316CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D6EB981E800653002316CF /* macOsEthernetEmulatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D6EB9A1E800653002316CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D6EBA31E800653002316CF /* macOsEthernetEmulatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04D6EB951E800653002316CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D6EB811E800652002316CF /* macOsEthernetEmulator */;
+			targetProxy = 04D6EB941E800653002316CF /* PBXContainerItemProxy */;
+		};
+		04D6EBA01E800653002316CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D6EB811E800652002316CF /* macOsEthernetEmulator */;
+			targetProxy = 04D6EB9F1E800653002316CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04D6EB8B1E800653002316CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04D6EB8C1E800653002316CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04D6EBA51E800653002316CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04D6EBA61E800653002316CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		04D6EBA81E800653002316CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		04D6EBA91E800653002316CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		04D6EBAB1E800653002316CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macOsEthernetEmulator.app/Contents/MacOS/macOsEthernetEmulator";
+			};
+			name = Debug;
+		};
+		04D6EBAC1E800653002316CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macOsEthernetEmulator.app/Contents/MacOS/macOsEthernetEmulator";
+			};
+			name = Release;
+		};
+		04D6EBAE1E800653002316CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = macOsEthernetEmulator;
+			};
+			name = Debug;
+		};
+		04D6EBAF1E800653002316CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR2W66B7K8;
+				INFOPLIST_FILE = macOsEthernetEmulatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = macOsEthernetEmulator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04D6EB7D1E800652002316CF /* Build configuration list for PBXProject "macOsEthernetEmulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D6EBA51E800653002316CF /* Debug */,
+				04D6EBA61E800653002316CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D6EBA71E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D6EBA81E800653002316CF /* Debug */,
+				04D6EBA91E800653002316CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04D6EBAA1E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D6EBAB1E800653002316CF /* Debug */,
+				04D6EBAC1E800653002316CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04D6EBAD1E800653002316CF /* Build configuration list for PBXNativeTarget "macOsEthernetEmulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D6EBAE1E800653002316CF /* Debug */,
+				04D6EBAF1E800653002316CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04D6EB7A1E800652002316CF /* Project object */;
+}
