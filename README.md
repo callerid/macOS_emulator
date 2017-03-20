@@ -4,7 +4,7 @@ iOS Etherenet Emulator
 spenland@callerid.com
 -------------------------------------------------------------------------------
 
-iOS Development
+macOS Development
  - This app will uses the 'CocoaAsyncSocket' libraries to make UDP coding easier.
  - App targets iPad Pro 9.7 inch
  
