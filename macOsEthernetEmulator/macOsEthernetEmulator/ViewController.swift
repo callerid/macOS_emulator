@@ -589,7 +589,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // Create call record
         let sendString = "^^<U>000001<S>345678$" + lineStr +
                             " " + iOrO + " " + sOrE + " " +
-                            dur + " G A1 " + dateString + " " + paddedNumberString + paddedNameString
+                            dur + " G A1 " + dateString + " " + paddedNumberString + " " + paddedNameString
         
         // Return created call record
         return sendString
