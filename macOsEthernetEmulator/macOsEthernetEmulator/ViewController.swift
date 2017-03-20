@@ -73,6 +73,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // - unit types
         cb_unit_type.removeAllItems()
         cb_unit_type.addItems(withTitles: unitTypes)
+        cb_unit_type.selectItem(at: 1)
         
         //-- numbers
         line_1_number.removeAllItems()
@@ -110,6 +111,31 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         
     }
 
+    //-----------------------------------
+    
+    //-----------------------------------
+    // Text changes
+    //-----------------------------------
+    @IBAction func cb_unit_type_changed(_ sender: NSPopUpButton) {
+        
+        // Check if basic or deluxe
+        var deluxe = false
+        if(unitTypes[cb_unit_type.indexOfSelectedItem]=="Deluxe"){
+            deluxe = true
+        }
+        
+        if(!deluxe){
+            rb_inbound.isEnabled = false
+            rb_outbound.isEnabled = false
+            ckb_detailed.isEnabled = false
+        }
+        else{
+            rb_inbound.isEnabled = true
+            rb_outbound.isEnabled = true
+            ckb_detailed.isEnabled = true
+        }
+        
+    }
     //-----------------------------------
     
     //-----------------------------------
@@ -315,18 +341,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             break
         }
         
-        // If detailed then send Ring first
-        if(detailed){
-            
-            let ringRecord = prepareDetailedRecord(line: line, type: "R", dateStr: detailedDateStr)
-            outputDisplay?.stringValue = "RINGING"
-            sendPacket(body: ringRecord)
-            
-        }
-        
-        // Wait 2 seconds
-        sleep(2)
-        
         // Check inbound or outbound
         var inOrOut = "I"
         switch rb_inbound.state {
@@ -340,6 +354,73 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             inOrOut = "I"
             break
         }
+        
+        //------------------------------------
+        // If OUTBOUND
+        //------------------------------------
+        if(inOrOut == "O"){
+            
+            // If detailed send off hooks
+            if(detailed){
+                
+                let offHookRecord = prepareDetailedRecord(line: line, type: "F", dateStr: detailedDateStr)
+                outputDisplay?.stringValue = "OFF-HOOK"
+                sendPacket(body: offHookRecord)
+                
+            }
+            
+            // Wait 2 seconds
+            sleep(2)
+            
+            // Send start
+            let startRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "S", dur: "0000", dateString: dateStr)
+            outputDisplay?.stringValue = "START RECORD"
+            sendPacket(body: startRecord)
+
+            // Wait 2 seconds
+            sleep(2)
+            
+            // If detailed send on hook
+            if(detailed){
+                
+                let onHookRecord = prepareDetailedRecord(line: line, type: "N", dateStr: detailedDateStr)
+                outputDisplay?.stringValue = "ON-HOOK"
+                sendPacket(body: onHookRecord)
+                
+            }
+            
+            // Wait 2 seconds
+            sleep(2)
+            
+            // Send End record
+            let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0120", dateString: dateStr)
+            outputDisplay?.stringValue = "END RECORD"
+            sendPacket(body: endRecord)
+            
+            // Wait 2 seconds
+            outputDisplay?.stringValue = "Completed"
+            
+            // End this progress
+            return
+            
+        }
+        //------------------------------------
+        
+        //------------------------------------
+        // If INBOUND
+        //------------------------------------
+        
+        // If detailed then send Ring first
+        if(detailed){
+            
+            let ringRecord = prepareDetailedRecord(line: line, type: "R", dateStr: detailedDateStr)
+            outputDisplay?.stringValue = "RINGING"
+            sendPacket(body: ringRecord)
+            
+        }
+        
+        // Wait 2 seconds
+        sleep(2)
         
         // Send start
         let startRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "S", dur: "0000", dateString: dateStr)
@@ -499,6 +580,11 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // Pad to correct lengths
         paddedNumberString = paddedNumberString.padding(toLength: 14, withPad: " ", startingAt: 0)
         paddedNameString = paddedNameString.padding(toLength: 15, withPad: " ", startingAt: 0)
+        
+        // If outbound then clear name field
+        if(iOrO == "O"){
+            paddedNameString = ""
+        }
         
         // Create call record
         let sendString = "^^<U>000001<S>345678$" + lineStr +
