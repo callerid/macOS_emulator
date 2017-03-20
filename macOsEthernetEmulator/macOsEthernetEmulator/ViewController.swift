@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CocoaAsyncSocket
 
 class ViewController: NSViewController {
 
