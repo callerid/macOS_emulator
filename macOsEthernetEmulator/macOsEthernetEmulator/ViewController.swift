@@ -141,7 +141,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         line_4_name.selectItem(at: 3)
         
     }
-
+    
     //-----------------------------------
     
     //-----------------------------------
@@ -156,36 +156,61 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         }
         
         if(!deluxe){
+            
+            rb_inbound.state = NSOnState
+            rb_outbound.state = NSOffState
+            
+            ckb_detailed.state = NSOffState
+            
+            line_1_name.isEnabled = true
+            line_2_name.isEnabled = true
+            line_3_name.isEnabled = true
+            line_4_name.isEnabled = true
+            
             rb_inbound.isEnabled = false
             rb_outbound.isEnabled = false
             ckb_detailed.isEnabled = false
+            
         }
         else{
+            
             rb_inbound.isEnabled = true
             rb_outbound.isEnabled = true
             ckb_detailed.isEnabled = true
+            
         }
         
     }
     //-----------------------------------
+    
+    func showSending() {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = "Emulator Broadcasting"
+        myPopup.informativeText = "Preparing to send packets via UDP. Selecting 'OK' will start process. Focus will return to App after broadcasting is completed."
+        myPopup.alertStyle = NSAlertStyle.informational
+        myPopup.runModal()
+    }
     
     //-----------------------------------
     // Clicks
     //-----------------------------------
     @IBAction func btn_line_1_send_click(_ sender: NSClickGestureRecognizer) {
         
+        showSending()
         sendCallRecord(line: 1)
         
     }
     
     @IBAction func btn_send_line_2_click(_ sender: NSClickGestureRecognizer) {
         
+        showSending()
         sendCallRecord(line: 2)
         
     }
     
     @IBAction func btn_send_line_3_click(_ sender: NSClickGestureRecognizer) {
         
+        showSending()
         sendCallRecord(line: 3)
         
     }
@@ -193,6 +218,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     @IBAction func btn_send_line_4_click(_ sender: NSClickGestureRecognizer) {
         
+        showSending()
         sendCallRecord(line: 4)
         
     }
