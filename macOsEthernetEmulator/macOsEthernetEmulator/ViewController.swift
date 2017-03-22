@@ -196,6 +196,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     //-----------------------------------
     @IBAction func btn_line_1_send_click(_ sender: NSClickGestureRecognizer) {
         
+        lb_line_1_status.stringValue = "sending"
         showSending()
         sendCallRecord(line: 1)
         
@@ -203,6 +204,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     @IBAction func btn_send_line_2_click(_ sender: NSClickGestureRecognizer) {
         
+        lb_line_2_status.stringValue = "sending"
         showSending()
         sendCallRecord(line: 2)
         
@@ -210,6 +212,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     @IBAction func btn_send_line_3_click(_ sender: NSClickGestureRecognizer) {
         
+        lb_line_3_status.stringValue = "sending"
         showSending()
         sendCallRecord(line: 3)
         
@@ -218,6 +221,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     @IBAction func btn_send_line_4_click(_ sender: NSClickGestureRecognizer) {
         
+        lb_line_4_status.stringValue = "sending"
         showSending()
         sendCallRecord(line: 4)
         
@@ -340,19 +344,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             deluxe = true
         }
         
-        if(!deluxe){
-            
-            // Send only start record
-            let basicCallRecord = prepareCallRecord(line: line, iOrO: "I", sOrE: "S", dur: "0000", dateString: dateStr)
-            
-            // Send call record
-            sendPacket(body: basicCallRecord)
-            
-            // Finished
-            return
-            
-        }
-        
         // Prepare outputting of status
         var outputDisplay = lb_line_1_status
         switch line {
@@ -381,6 +372,22 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             
             outputDisplay = lb_line_1_status
             break
+            
+        }
+        
+        if(!deluxe){
+            
+            // Send only start record
+            let basicCallRecord = prepareCallRecord(line: line, iOrO: "I", sOrE: "S", dur: "0000", dateString: dateStr)
+            
+            // Send call record
+            sendPacket(body: basicCallRecord)
+            
+            // Show completion
+            outputDisplay?.stringValue = "Complete"
+            
+            // Finished
+            return
             
         }
         
@@ -421,7 +428,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             if(detailed){
                 
                 let offHookRecord = prepareDetailedRecord(line: line, type: "F", dateStr: detailedDateStr)
-                outputDisplay?.stringValue = "OFF-HOOK"
                 sendPacket(body: offHookRecord)
                 
             }
@@ -431,7 +437,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             
             // Send start
             let startRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "S", dur: "0000", dateString: dateStr)
-            outputDisplay?.stringValue = "START RECORD"
             sendPacket(body: startRecord)
 
             // Wait 2 seconds
@@ -441,7 +446,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             if(detailed){
                 
                 let onHookRecord = prepareDetailedRecord(line: line, type: "N", dateStr: detailedDateStr)
-                outputDisplay?.stringValue = "ON-HOOK"
                 sendPacket(body: onHookRecord)
                 
             }
@@ -451,7 +455,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             
             // Send End record
             let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0120", dateString: dateStr)
-            outputDisplay?.stringValue = "END RECORD"
             sendPacket(body: endRecord)
             
             // Wait 2 seconds
@@ -471,7 +474,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         if(detailed){
             
             let ringRecord = prepareDetailedRecord(line: line, type: "R", dateStr: detailedDateStr)
-            outputDisplay?.stringValue = "RINGING"
             sendPacket(body: ringRecord)
             
         }
@@ -481,7 +483,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         
         // Send start
         let startRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "S", dur: "0000", dateString: dateStr)
-        outputDisplay?.stringValue = "START RECORD"
         sendPacket(body: startRecord)
         
         // Wait 2 seconds
@@ -491,7 +492,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         if(detailed){
             
             let offHookRecord = prepareDetailedRecord(line: line, type: "F", dateStr: detailedDateStr)
-            outputDisplay?.stringValue = "OFF-HOOK"
             sendPacket(body: offHookRecord)
             
         }
@@ -503,7 +503,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         if(detailed){
             
             let onHookRecord = prepareDetailedRecord(line: line, type: "N", dateStr: detailedDateStr)
-            outputDisplay?.stringValue = "ON-HOOK"
             sendPacket(body: onHookRecord)
             
         }
@@ -513,7 +512,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         
         // Send End record
         let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0120", dateString: dateStr)
-        outputDisplay?.stringValue = "END RECORD"
         sendPacket(body: endRecord)
         
         // Wait 2 seconds 
@@ -571,7 +569,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             break
         }
         
-        let sendString = "^^<U>000001<S>345678$" + lineStr + " " + type + " " + dateStr
+        let sendString = "^^<U>000001<S>345678$" + lineStr + " " + type + "             " + dateStr
         
         return sendString
         
@@ -637,11 +635,6 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // Pad to correct lengths
         paddedNumberString = paddedNumberString.padding(toLength: 14, withPad: " ", startingAt: 0)
         paddedNameString = paddedNameString.padding(toLength: 15, withPad: " ", startingAt: 0)
-        
-        // If outbound then clear name field
-        if(iOrO == "O"){
-            paddedNameString = ""
-        }
         
         // Create call record
         let sendString = "^^<U>000001<S>345678$" + lineStr +
