@@ -241,10 +241,10 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     @IBAction func btn_set_to_local_ip_click(_ sender: NSClickGestureRecognizer) {
         
         // Get computer IP
-        var ips = getIFAddresses()
+        let ip = getIFAddresses()
         
         // Set to computer IP
-        tb_ip.stringValue = ips[0]
+        tb_ip.stringValue = ip
         
         // valid IP address
         lb_ip_status.stringValue = "valid ip"
@@ -698,14 +698,14 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     // Lower level functions
     //-----------------------------------
     
-    func getIFAddresses() -> [String] {
+    func getIFAddresses() -> String {
         
         var addresses = [String]()
         
         // Get list of all interfaces on the local machine:
         var ifaddr : UnsafeMutablePointer<ifaddrs>?
-        guard getifaddrs(&ifaddr) == 0 else { return [] }
-        guard let firstAddr = ifaddr else { return [] }
+        guard getifaddrs(&ifaddr) == 0 else { return "unknown" }
+        guard let firstAddr = ifaddr else { return "unknown" }
         
         // For each interface ...
         for ptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
@@ -728,7 +728,20 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         }
         
         freeifaddrs(ifaddr)
-        return addresses
+        
+        for address in addresses {
+            
+            let ipPattern = "\\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\.|$)){4}\\b"
+            let ipRegex = try! NSRegularExpression(pattern: ipPattern, options: [])
+            let ipMatches = ipRegex.matches(in: address, options: [], range: NSRange(location: 0, length: address.characters.count))
+            
+            if(ipMatches.count>0){
+                return address
+            }
+        }
+        
+        return "unknown"
+        
     }
     
     //-----------------------------------
