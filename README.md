@@ -1,7 +1,5 @@
 CALLERID.COM
 iOS Etherenet Emulator
----------------------
-spenland@callerid.com
 -------------------------------------------------------------------------------
 
 macOS Development
@@ -18,11 +16,11 @@ App Manual:
 
 To generate a call on your network (your testing software must be on this network):
 
-	- Select Unit Type: Basic or Deluxe
-	- Select whether you wish the call to be an inbound or outbound call using raido
-	  buttons
-	- Check 'Detailed' if you wish to include 'Ring', 'Off-hooks', and 'On-hooks'
-	- Determine which line you wish to send packet on:
+	
+	- Select Unit Type: 'Basic' or 'Deluxe'
+	- Select 'Inbound' or 'Outbound' using raido buttons to set record type
+	- Check 'Detailed' to include 'Ring', 'Off-hooks', and 'On-hooks'
+	- Determine which line to send the packet on:
 		- Select 'Name' and 'Number' from drop downs
 	- Click 'Send'
 	
