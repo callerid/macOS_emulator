@@ -104,7 +104,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // - unit types
         cb_unit_type.removeAllItems()
         cb_unit_type.addItems(withTitles: unitTypes)
-        cb_unit_type.selectItem(at: 1)
+        cb_unit_type.selectItem(at: 0)
         
         //-- numbers
         line_1_number.removeAllItems()
@@ -262,7 +262,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         let regex = try! NSRegularExpression(pattern: validIpAddressRegex, options: [])
         let matches = regex.matches(in: strIP!, options: [], range: NSRange(location: 0, length: (strIP?.characters.count)!))
         
-        if(matches.count<1){
+        if(matches.count < 1){
             
             // not a valid IP address
             lb_ip_status.stringValue = "invalid ip"
@@ -296,6 +296,10 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             hr = hour - 12
             amPM = "PM"
         }
+        else if(hour == 12){
+            amPM = "PM"
+        }
+        
         
         // -----------------------
         // Pad if needed
