@@ -144,7 +144,14 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         rb_inbound.isEnabled = false
         rb_outbound.isEnabled = false
         
-        
+        line_1_number.stringValue = ""
+        line_1_name.stringValue = ""
+        line_2_number.stringValue = ""
+        line_2_name.stringValue = ""
+        line_3_number.stringValue = ""
+        line_3_name.stringValue = ""
+        line_4_number.stringValue = ""
+        line_4_name.stringValue = ""
         
     }   
     
@@ -190,6 +197,11 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     //-----------------------------------
     
     func showSending() {
+        
+        ShowPopup()
+        
+        return
+        
         let myPopup: NSAlert = NSAlert()
         myPopup.messageText = "Emulator Broadcasting"
         myPopup.informativeText = "Preparing to send packets via UDP. Selecting 'OK' will start process. Focus will return to App after broadcasting is completed."
@@ -197,39 +209,189 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         myPopup.runModal()
     }
     
+    func showFormatError(text:String) {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = "Unsupported Format"
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.informational
+        myPopup.runModal()
+    }
+    
     //-----------------------------------
     // Clicks
     //-----------------------------------
+    
+    // Check name and number
+    func CheckFormatting(line:Int) -> Bool{
+        
+        if(line == 1){
+            
+            let num = line_1_number.stringValue.replacingOccurrences(of: "-", with: "")
+            let name = line_1_name.stringValue
+            
+            if num.count > 14 || num.count < 1{
+                
+                showFormatError(text: "Line \(line) - Number cannot be empty or longer than 14 digits.")
+                return false
+                
+            }
+            
+            if num.isNumeric == false {
+                
+                showFormatError(text: "Line \(line) - Number not valid. Only digits allowed.")
+                return false
+                
+            }
+            
+            if name.count > 15 {
+                
+                showFormatError(text: "Line \(line) - Name cannot be longer than 15 characters.")
+                return false
+                
+            }
+            
+            return true
+            
+        }
+        else if(line==2){
+            
+            let num = line_2_number.stringValue.replacingOccurrences(of: "-", with: "")
+            let name = line_2_name.stringValue
+            
+            if num.count > 14 || num.count < 1{
+                
+                showFormatError(text: "Line \(line) - Number cannot be empty or longer than 14 digits.")
+                return false
+                
+            }
+            
+            if num.isNumeric == false {
+                
+                showFormatError(text: "Line \(line) - Number not valid. Only digits allowed.")
+                return false
+                
+            }
+            
+            if name.count > 15 {
+                
+                showFormatError(text: "Line \(line) - Name cannot be longer than 15 characters.")
+                return false
+                
+            }
+            
+            return true
+            
+        }
+        else if(line == 3){
+            
+            let num = line_3_number.stringValue.replacingOccurrences(of: "-", with: "")
+            let name = line_3_name.stringValue
+            
+            if num.count > 14 || num.count < 1{
+                
+                showFormatError(text: "Line \(line) - Number cannot be empty or longer than 14 digits.")
+                return false
+                
+            }
+            
+            if num.isNumeric == false {
+                
+                showFormatError(text: "Line \(line) - Number not valid. Only digits allowed.")
+                return false
+                
+            }
+            
+            if name.count > 15 {
+                
+                showFormatError(text: "Line \(line) - Name cannot be longer than 15 characters.")
+                return false
+                
+            }
+            
+            return true
+            
+        }
+        else if(line == 4){
+            
+            let num = line_4_number.stringValue.replacingOccurrences(of: "-", with: "")
+            let name = line_4_name.stringValue
+            
+            if num.count > 14 || num.count < 1{
+                
+                showFormatError(text: "Line \(line) - Number cannot be empty or longer than 14 digits.")
+                return false
+                
+            }
+            
+            if num.isNumeric == false {
+                
+                showFormatError(text: "Line \(line) - Number not valid. Only digits allowed.")
+                return false
+                
+            }
+            
+            if name.count > 15 {
+                
+                showFormatError(text: "Line \(line) - Name cannot be longer than 15 characters.")
+                return false
+                
+            }
+            
+            return true
+            
+        }
+        
+        return false
+        
+    }
+    
+    //-----------
     @IBAction func btn_line_1_send_click(_ sender: NSClickGestureRecognizer) {
         
-        lb_line_1_status.stringValue = "sending"
-        showSending()
-        sendCallRecord(line: 1)
+        if CheckFormatting(line: 1) {
+        
+            lb_line_1_status.stringValue = "sending"
+            showSending()
+            sendCallRecord(line: 1)
+            
+        }
         
     }
     
     @IBAction func btn_send_line_2_click(_ sender: NSClickGestureRecognizer) {
         
-        lb_line_2_status.stringValue = "sending"
-        showSending()
-        sendCallRecord(line: 2)
+        if CheckFormatting(line: 2){
+            
+            lb_line_2_status.stringValue = "sending"
+            showSending()
+            sendCallRecord(line: 2)
+            
+        }
         
     }
     
     @IBAction func btn_send_line_3_click(_ sender: NSClickGestureRecognizer) {
         
-        lb_line_3_status.stringValue = "sending"
-        showSending()
-        sendCallRecord(line: 3)
+        if CheckFormatting(line: 3){
+            
+            lb_line_3_status.stringValue = "sending"
+            showSending()
+            sendCallRecord(line: 3)
+            
+        }
         
     }
     
     
     @IBAction func btn_send_line_4_click(_ sender: NSClickGestureRecognizer) {
         
-        lb_line_4_status.stringValue = "sending"
-        showSending()
-        sendCallRecord(line: 4)
+        if CheckFormatting(line: 4){
+            
+            lb_line_4_status.stringValue = "sending"
+            showSending()
+            sendCallRecord(line: 4)
+            
+        }
         
     }
     
@@ -596,60 +758,60 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         // Get line number
         var lineStr = "01"
         
-        var paddedNumberString = possible_numbers[line_1_number.indexOfSelectedItem]
-        var paddedNameString = possible_names[line_1_name.indexOfSelectedItem]
+        var num_string = line_1_number.stringValue
+        var name_string = line_1_name.stringValue
         
         switch line {
             
         case 1:
             
             lineStr="01"
-            paddedNumberString = possible_numbers[line_1_number.indexOfSelectedItem]
-            paddedNameString = possible_names[line_1_name.indexOfSelectedItem]
+            num_string = line_1_number.stringValue
+            name_string = line_1_name.stringValue
             
             break
         
         case 2:
             
             lineStr="02"
-            paddedNumberString = possible_numbers[line_2_number.indexOfSelectedItem]
-            paddedNameString = possible_names[line_2_name.indexOfSelectedItem]
+            num_string = line_2_number.stringValue
+            name_string = line_2_name.stringValue
             
             break
             
         case 3:
             
             lineStr="03"
-            paddedNumberString = possible_numbers[line_3_number.indexOfSelectedItem]
-            paddedNameString = possible_names[line_3_name.indexOfSelectedItem]
+            num_string = line_3_number.stringValue
+            name_string = line_3_name.stringValue
             
             break
             
         case 4:
             
             lineStr="04"
-            paddedNumberString = possible_numbers[line_4_number.indexOfSelectedItem]
-            paddedNameString = possible_names[line_4_name.indexOfSelectedItem]
+            num_string = line_4_number.stringValue
+            name_string = line_4_name.stringValue
             
             break
             
         default:
             
             lineStr="01"
-            paddedNumberString = possible_numbers[line_1_number.indexOfSelectedItem]
-            paddedNameString = possible_names[line_1_name.indexOfSelectedItem]
+            num_string = line_1_number.stringValue
+            name_string = line_1_name.stringValue
             
             break
         }
         
         // Pad to correct lengths
-        paddedNumberString = paddedNumberString.padding(toLength: 14, withPad: " ", startingAt: 0)
-        paddedNameString = paddedNameString.padding(toLength: 15, withPad: " ", startingAt: 0)
+        let padded_number = num_string.padding(toLength: 14, withPad: " ", startingAt: 0)
+        let padded_name = name_string.padding(toLength: 15, withPad: " ", startingAt: 0)
         
         // Create call record
         let sendString = "^^<U>000001<S>345678$" + lineStr +
                             " " + iOrO + " " + sOrE + " " +
-                            dur + " G A1 " + dateString + " " + paddedNumberString + " " + paddedNameString
+                            dur + " G A1 " + dateString + " " + padded_number + " " + padded_name
         
         // Return created call record
         return sendString
@@ -763,5 +925,13 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         }
     }
     
+}
+
+extension String {
+    var isNumeric: Bool {
+        guard self.characters.count > 0 else { return false }
+        let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        return Set(self.characters).isSubset(of: nums)
+    }
 }
 
