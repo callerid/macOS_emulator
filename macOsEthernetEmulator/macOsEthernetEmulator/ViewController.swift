@@ -21,15 +21,15 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     @IBOutlet weak var ckb_detailed: NSButton!
     
-    @IBOutlet weak var line_1_number: NSPopUpButton!
-    @IBOutlet weak var line_2_number: NSPopUpButton!
-    @IBOutlet weak var line_3_number: NSPopUpButton!
-    @IBOutlet weak var line_4_number: NSPopUpButton!
+    @IBOutlet weak var line_1_number: NSComboBox!
+    @IBOutlet weak var line_2_number: NSComboBox!
+    @IBOutlet weak var line_3_number: NSComboBox!
+    @IBOutlet weak var line_4_number: NSComboBox!
     
-    @IBOutlet weak var line_1_name: NSPopUpButton!
-    @IBOutlet weak var line_2_name: NSPopUpButton!
-    @IBOutlet weak var line_3_name: NSPopUpButton!
-    @IBOutlet weak var line_4_name: NSPopUpButton!
+    @IBOutlet weak var line_1_name: NSComboBox!
+    @IBOutlet weak var line_2_name: NSComboBox!
+    @IBOutlet weak var line_3_name: NSComboBox!
+    @IBOutlet weak var line_4_name: NSComboBox!    
     
     // Radio button group
     @IBAction func rb_inOrOut(_ sender: NSButton) {
@@ -108,39 +108,45 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         
         //-- numbers
         line_1_number.removeAllItems()
-        line_1_number.addItems(withTitles: possible_numbers)
+        line_1_number.addItems(withObjectValues: possible_numbers)
         line_1_number.selectItem(at: 0)
         
         line_2_number.removeAllItems()
-        line_2_number.addItems(withTitles: possible_numbers)
+        line_2_number.addItems(withObjectValues: possible_numbers)
         line_2_number.selectItem(at: 1)
         
         line_3_number.removeAllItems()
-        line_3_number.addItems(withTitles: possible_numbers)
+        line_3_number.addItems(withObjectValues: possible_numbers)
         line_3_number.selectItem(at: 2)
         
         line_4_number.removeAllItems()
-        line_4_number.addItems(withTitles: possible_numbers)
+        line_4_number.addItems(withObjectValues: possible_numbers)
         line_4_number.selectItem(at: 3)
         
         //-- names
         line_1_name.removeAllItems()
-        line_1_name.addItems(withTitles: possible_names)
+        line_1_name.addItems(withObjectValues: possible_names)
         line_1_name.selectItem(at: 0)
         
         line_2_name.removeAllItems()
-        line_2_name.addItems(withTitles: possible_names)
+        line_2_name.addItems(withObjectValues: possible_names)
         line_2_name.selectItem(at: 1)
         
         line_3_name.removeAllItems()
-        line_3_name.addItems(withTitles: possible_names)
+        line_3_name.addItems(withObjectValues: possible_names)
         line_3_name.selectItem(at: 2)
         
         line_4_name.removeAllItems()
-        line_4_name.addItems(withTitles: possible_names)
+        line_4_name.addItems(withObjectValues: possible_names)
         line_4_name.selectItem(at: 3)
         
-    }
+        ckb_detailed.isEnabled = false
+        rb_inbound.isEnabled = false
+        rb_outbound.isEnabled = false
+        
+        
+        
+    }   
     
     //-----------------------------------
     

@@ -222,7 +222,7 @@
 				TargetAttributes = {
 					04D6EB811E800652002316CF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = UR2W66B7K8;
+						DevelopmentTeam = 5HYSMEB4HY;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -486,7 +486,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UR2W66B7K8;
+				DEVELOPMENT_TEAM = 5HYSMEB4HY;
 				INFOPLIST_FILE = macOsEthernetEmulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callerid.macOsEthernetEmulator;
@@ -505,7 +505,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UR2W66B7K8;
+				DEVELOPMENT_TEAM = 5HYSMEB4HY;
 				INFOPLIST_FILE = macOsEthernetEmulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
