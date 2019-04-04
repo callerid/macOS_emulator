@@ -11,10 +11,40 @@
 #import <CoreData/CoreData.h>
 #import <AppKit/AppKit.h>
 
-void ShowPopup(){
+void ShowStartPopup(){
     
     NSString* Title = @"Ethernet Emulator";
     NSString* Text = @"Sending packets via UDP. Focus will return to App after broadcasting is completed.";
+    NSWindow* Window = [[NSApplication sharedApplication] mainWindow];
+    
+    NSAlert* alert = [[NSAlert alloc] init];
+    
+    NSButton* OkayButton = [alert addButtonWithTitle:@"Okay"];
+    [OkayButton setHidden:true];
+    [alert setMessageText:Title];
+    
+    [alert setInformativeText:Text];
+    [alert setAlertStyle:NSAlertStyleInformational];
+    
+    [alert beginSheetModalForWindow:Window completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertSecondButtonReturn) {
+            NSLog(@"Failed");
+            return;
+        }
+        
+        NSLog(@"Success");
+    }];
+    
+    [NSThread sleepForTimeInterval: 3.0f];
+    
+    [OkayButton performClick:nil];
+    
+}
+
+void ShowEndPopup(){
+    
+    NSString* Title = @"Ethernet Emulator";
+    NSString* Text = @"All packets have completed.";
     NSWindow* Window = [[NSApplication sharedApplication] mainWindow];
     
     NSAlert* alert = [[NSAlert alloc] init];

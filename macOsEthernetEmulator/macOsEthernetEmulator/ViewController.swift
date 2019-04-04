@@ -198,15 +198,17 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
     
     func showSending() {
         
-        ShowPopup()
+        let unit_type = cb_unit_type.indexOfSelectedItem
+        if unit_type == 1 { // 1 = deluxe
+            ShowStartPopup();
+        }
         
-        return
+    }
+    
+    func showComplete(){
         
-        let myPopup: NSAlert = NSAlert()
-        myPopup.messageText = "Emulator Broadcasting"
-        myPopup.informativeText = "Preparing to send packets via UDP. Selecting 'OK' will start process. Focus will return to App after broadcasting is completed."
-        myPopup.alertStyle = NSAlertStyle.informational
-        myPopup.runModal()
+        ShowEndPopup();
+        
     }
     
     func showFormatError(text:String) {
@@ -353,6 +355,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             lb_line_1_status.stringValue = "sending"
             showSending()
             sendCallRecord(line: 1)
+            showComplete()
             
         }
         
@@ -365,6 +368,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             lb_line_2_status.stringValue = "sending"
             showSending()
             sendCallRecord(line: 2)
+            showComplete()
             
         }
         
@@ -377,6 +381,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             lb_line_3_status.stringValue = "sending"
             showSending()
             sendCallRecord(line: 3)
+            showComplete()
             
         }
         
@@ -390,6 +395,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             lb_line_4_status.stringValue = "sending"
             showSending()
             sendCallRecord(line: 4)
+            showComplete()
             
         }
         
@@ -626,7 +632,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             sleep(2)
             
             // Send End record
-            let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0120", dateString: dateStr)
+            let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0002", dateString: dateStr)
             sendPacket(body: endRecord)
             
             // Wait 2 seconds
@@ -658,7 +664,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         sendPacket(body: startRecord)
         
         // Wait 2 seconds
-        sleep(2)
+        sleep(1)
         
         // If detailed send off hooks
         if(detailed){
@@ -669,7 +675,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         }
         
         // Wait 2 seconds
-        sleep(2)
+        sleep(3)
         
         // If detailed send on hook
         if(detailed){
@@ -679,11 +685,8 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
             
         }
         
-        // Wait 2 seconds
-        sleep(2)
-        
         // Send End record
-        let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0120", dateString: dateStr)
+        let endRecord = prepareCallRecord(line: line, iOrO: inOrOut, sOrE: "E", dur: "0003", dateString: dateStr)
         sendPacket(body: endRecord)
         
         // Wait 2 seconds 

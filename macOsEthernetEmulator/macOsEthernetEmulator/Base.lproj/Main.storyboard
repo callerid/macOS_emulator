@@ -822,11 +822,11 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-x6-PoW">
-                                <rect key="frame" x="73" y="173" width="436" height="17"/>
+                                <rect key="frame" x="76" y="173" width="469" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose Line #, select Number and Name, then click Send to start call." id="eih-7c-C6r">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" red="0.75784040178571432" green="0.0" blue="0.18211495535714287" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Type or Select Caller ID Number and Name, then Click Send" id="eih-7c-C6r">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -914,16 +914,8 @@
                                     <action selector="cb_unit_type_changed:" target="XfG-lQ-9wD" id="isq-WN-DCp"/>
                                 </connections>
                             </popUpButton>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-qS-x8A">
-                                <rect key="frame" x="492" y="201" width="73" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Detailed" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Foc-1y-NpX">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GLw-Uh-Dt0">
-                                <rect key="frame" x="257" y="200" width="80" height="18"/>
+                                <rect key="frame" x="251" y="200" width="80" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="radio" title="Inbound" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="6WN-f3-V97">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1040,6 +1032,14 @@
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVy-qS-x8A">
+                                <rect key="frame" x="455" y="183" width="130" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Ring, Off-hook,  On-hook" bezelStyle="regularSquare" imagePosition="left" alignment="center" inset="2" id="Foc-1y-NpX">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>

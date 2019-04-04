@@ -3,4 +3,5 @@
 //
 #include <ifaddrs.h>
 
-void ShowPopup();
+void ShowStartPopup();
+void ShowEndPopup();
