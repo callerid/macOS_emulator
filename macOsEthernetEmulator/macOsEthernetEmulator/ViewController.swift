@@ -812,7 +812,7 @@ class ViewController: NSViewController, GCDAsyncUdpSocketDelegate {
         let padded_name = name_string.padding(toLength: 15, withPad: " ", startingAt: 0)
         
         // Create call record
-        let sendString = "^^<U>000001<S>345678$" + lineStr +
+        let sendString = "^^<U>\u{0}\u{0}\u{0}\u{0}\u{0}\u{1}<S>345678$" + lineStr +
                             " " + iOrO + " " + sOrE + " " +
                             dur + " G A1 " + dateString + " " + padded_number + " " + padded_name
         
